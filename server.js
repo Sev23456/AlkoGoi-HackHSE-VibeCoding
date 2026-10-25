@@ -241,7 +241,7 @@ function validate(raw, p) {
 async function chatReply(body) {
   const level = Number(body.level);
   const chat = String(body.chat || '');
-  if (![2, 3, 4, 5, 6, 7].includes(level) || !/^[a-zA-Z]+$/.test(chat)) throw Object.assign(new Error('bad request'), { status: 400 });
+  if (![2, 3, 4, 5, 6].includes(level) || !/^[a-z]+$/.test(chat)) throw Object.assign(new Error('bad request'), { status: 400 });
   const p = buildPrompt(level, chat, body);
   let lastErr;
   for (const temp of [0.7, 0.4]) {
