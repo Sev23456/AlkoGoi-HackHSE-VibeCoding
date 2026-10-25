@@ -21,36 +21,16 @@
    git clone <ссылка на репозиторий>
    cd <папка с server.js>
    ```
-3. Создайте файл `.env` с ключом GigaChat (ключ авторизации из личного кабинета GigaChat API):
-   ```
-   # Windows
-   copy .env.example .env
-   # macOS / Linux
-   cp .env.example .env
-   ```
-   Откройте `.env` и впишите ключ в строку `GIGACHAT_AUTH_KEY=`.
-4. Скачайте сертификат Минцифры в папку `certs` (без него GigaChat не примет соединение):
-   ```
-   curl -o certs/russian_trusted_root_ca_pem.crt https://gu-st.ru/content/lending/russian_trusted_root_ca_pem.crt
-   ```
-   Официальная страница сертификатов: https://www.gosuslugi.ru/crt
-5. Запустите сервер:
+2. Запустите сервер:
    ```
    node server.js
    ```
    В терминале появится строка `Игра запущена: http://localhost:3000`. Окно терминала не закрывайте.
-6. Откройте в браузере **http://localhost:3000**
+3. Откройте в браузере **http://localhost:3000**
 
 Проверка связи с нейросетью: **http://localhost:3000/api/check** — должно прийти `"ok": true`.
 
 Остановить сервер: `Ctrl + C` в окне терминала.
-
-### Без ключа GigaChat
-
-```
-npm run test-mode
-```
-Сервер запустится в тестовом режиме: персонажи отвечают заглушкой. Удобно, чтобы проверить, что всё работает.
 
 ## Уровни
 
